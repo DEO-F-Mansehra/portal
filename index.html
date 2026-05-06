@@ -3,30 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <script>
-        const REAL_SITE_URL = "https://deofmansehra.ct.ws/"; 
-    </script>
-
-    <!-- PREMIUM WHATSAPP PREVIEW (syedmaacz/hub) -->
-    <title>DEO (F) Mansehra | Official Hub</title>
-    <meta property="og:title" content="DEO (F) Mansehra | Official Hub">
-    <meta property="og:description" content="District Education Office (Female) Mansehra Official Command Center. Connect to Attendance and Reports.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/syedmaacz/hub/main/deo_logo.png">
-    <meta property="og:url" content="https://syedmaacz.github.io/hub/">
+    <title>Furniture Verification | DEO (F) Mansehra</title>
+    <meta name="description" content="Furniture verification for High and Higher Secondary schools only. One simple form, one signatory photo, and clear student seating counts.">
     <meta property="og:type" content="website">
-
-    <!-- INSTANT REDIRECT TO INFINITYFREE -->
-    <meta http-equiv="refresh" content="0; url=https://deofmansehra.ct.ws/">
-    <script type="text/javascript">
-        window.location.href = REAL_SITE_URL;
-    </script>
+    <meta property="og:title" content="Furniture Verification | DEO (F) Mansehra">
+    <meta property="og:description" content="Student seating only. Enter EMIS, verify the counts, and submit one signatory photo.">
+    <meta property="og:image" content="preview.png">
+    <meta property="og:image:alt" content="Furniture verification preview with Urdu instructions">
+    <meta property="og:url" content="https://deofmansehra.ct.ws/furniture_share/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Furniture Verification | DEO (F) Mansehra">
+    <meta name="twitter:description" content="Student seating only. Enter EMIS, verify the counts, and submit one signatory photo.">
+    <meta name="twitter:image" content="preview.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0d2910;
+            --green: #1b5e20;
+            --green-2: #2e7d32;
+            --gold: #ffeb3b;
+            --text: #f8fafc;
+            --muted: rgba(255,255,255,0.8);
+            --line: rgba(255,255,255,0.14);
+            --card: rgba(7, 26, 9, 0.62);
+            --urdu-font: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', 'Noto Naskh Arabic', serif;
+        }
+        * { box-sizing: border-box; }
+        html, body { margin: 0; min-height: 100%; }
+        body {
+            font-family: 'Outfit', system-ui, sans-serif;
+            background:
+                radial-gradient(circle at 15% 20%, rgba(255,235,59,0.18), transparent 24%),
+                radial-gradient(circle at 80% 15%, rgba(255,255,255,0.1), transparent 22%),
+                radial-gradient(circle at 75% 80%, rgba(67,160,71,0.45), transparent 32%),
+                linear-gradient(135deg, #071b08 0%, #103914 44%, #1b5e20 100%);
+            color: var(--text);
+        }
+        .frame { min-height: 100vh; display: grid; place-items: center; padding: 24px; }
+        .card {
+            width: min(980px, 100%);
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 28px;
+            box-shadow: 0 22px 60px rgba(0,0,0,0.38);
+            backdrop-filter: blur(14px);
+            overflow: hidden;
+        }
+        .hero {
+            padding: 34px 30px 28px;
+            background: linear-gradient(135deg, rgba(27,94,32,0.92), rgba(46,125,50,0.92));
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at top right, rgba(255,235,59,0.2), transparent 26%),
+                radial-gradient(circle at bottom left, rgba(255,255,255,0.12), transparent 24%);
+            pointer-events: none;
+        }
+        .badge {
+            position: relative;
+            z-index: 1;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.12);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.2px;
+        }
+        h1 {
+            position: relative;
+            z-index: 1;
+            margin: 16px 0 10px;
+            font-size: clamp(34px, 5vw, 60px);
+            line-height: 1;
+            letter-spacing: -0.05em;
+            text-align: center;
+        }
+        .subtitle {
+            position: relative;
+            z-index: 1;
+            margin: 0 auto;
+            max-width: 820px;
+            text-align: center;
+            font-size: 16px;
+            line-height: 1.65;
+            color: rgba(255,255,255,0.92);
+        }
+        .urdu {
+            font-family: var(--urdu-font);
+            direction: rtl;
+            unicode-bidi: isolate;
+            text-align: center;
+            line-height: 2.1;
+        }
+        .body { padding: 26px 30px 30px; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        }
+        .panel {
+            border-radius: 22px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.12);
+            padding: 18px 18px 16px;
+        }
+        .panel h2 { margin: 0 0 8px; font-size: 18px; color: var(--gold); }
+        .panel p, .panel li { margin: 0; color: rgba(255,255,255,0.92); line-height: 1.7; font-size: 14px; }
+        .panel ul { margin: 10px 0 0 18px; padding: 0; }
+        .panel li + li { margin-top: 6px; }
+        .cta { margin-top: 18px; display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
+        .btn {
+            appearance: none;
+            border: 0;
+            border-radius: 999px;
+            padding: 14px 22px;
+            font-weight: 800;
+            font-size: 15px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+        .btn:hover { transform: translateY(-1px); }
+        .btn-gold {
+            background: var(--gold);
+            color: #17311b;
+            box-shadow: 0 14px 28px rgba(255,235,59,0.22);
+        }
+        .btn-light {
+            background: rgba(255,255,255,0.08);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.18);
+        }
+        .note {
+            margin-top: 16px;
+            text-align: center;
+            font-size: 13px;
+            color: var(--muted);
+        }
+        .footer {
+            padding: 0 30px 24px;
+            text-align: center;
+            font-size: 12px;
+            color: rgba(255,255,255,0.72);
+        }
+        @media (max-width: 720px) {
+            .hero, .body, .footer { padding-left: 18px; padding-right: 18px; }
+            .grid { grid-template-columns: 1fr; }
+        }
+    </style>
 </head>
-<body style="background: #0e3310; display:flex; align-items:center; justify-content:center; height:100vh; color:#fff; font-family:sans-serif;">
-    <div style="text-align:center;">
-        <h2 style="color:#ffeb3b;">Redirecting to Command Center...</h2>
-        <p>Please wait while we connect you to the official portal.</p>
-        <a href="https://deofmansehra.ct.ws/" style="color:#fff; text-decoration:underline; font-size:12px;">Click here if not redirected automatically</a>
-    </div>
+<body>
+    <main class="frame">
+        <section class="card">
+            <div class="hero">
+                <div class="badge">Furniture Verification | Student Seating Only</div>
+                <h1>DEO (F) MANSEHRA</h1>
+                <p class="subtitle">Furniture verification for High and Higher Secondary schools only. Type the EMIS, verify the student seating counts, and submit one signatory photo at the end.</p>
+                <p class="subtitle urdu" lang="ur">یہ فارم صرف ہائی اور ہائر سیکنڈری سکولز کے لیے ہے۔ ایمس درج کریں، گنتی کی تصدیق کریں، اور صرف ایک دستخط کنندہ کی تصویر جمع کرائیں۔</p>
+            </div>
+            <div class="body">
+                <div class="grid">
+                    <div class="panel">
+                        <h2>English</h2>
+                        <ul>
+                            <li>Type EMIS or school name and load the form.</li>
+                            <li>Check the pre-filled counts and correct them if needed.</li>
+                            <li>Fill your name, designation, and phone number.</li>
+                            <li>Upload one signatory photo only.</li>
+                        </ul>
+                    </div>
+                    <div class="panel urdu" lang="ur">
+                        <h2>اردو</h2>
+                        <ul>
+                            <li>ایمس نمبر یا اسکول کا نام لکھیں اور فارم لوڈ کریں۔</li>
+                            <li>پہلے سے بھری ہوئی گنتی دیکھیں اور ضرورت ہو تو درست کریں۔</li>
+                            <li>اپنا نام، عہدہ اور فون نمبر درج کریں۔</li>
+                            <li>آخر میں صرف ایک دستخط کنندہ کی تصویر اپ لوڈ کریں۔</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="cta">
+                    <a class="btn btn-gold" href="https://deofmansehra.ct.ws/furniture_verification.php">Open Furniture Verification</a>
+                </div>
+                <div class="note" id="redirectNote">Redirecting to the live form automatically.</div>
+            </div>
+            <div class="footer">For assistance please contact DEO (F) Mansehra.</div>
+        </section>
+    </main>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const previewMode = params.has('preview');
+        const note = document.getElementById('redirectNote');
+        if (previewMode) {
+            note.textContent = 'Preview mode is on, so the page will stay here for screenshot capture.';
+        } else {
+            setTimeout(() => {
+                window.location.replace('https://deofmansehra.ct.ws/furniture_verification.php');
+            }, 3000);
+        }
+    </script>
 </body>
 </html>
